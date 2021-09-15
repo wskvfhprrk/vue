@@ -8,13 +8,14 @@ console.log(F4)
 let [xsy,ln,sxb,zs]=F4
 console.log(xsy)
 console.log(ln)
-//2、对象结构规范——对象赋值名称必须要保持名称一致
+//2、对象结构规范——对象赋值名称必须要保持名称一致，全部赋值和部分赋值都可以
 const zbs={
     name:'赵本山',
     sex:'男',
     jineng:function(){
         console.log('演小品')
-    }
+    },
+    age:'不详'
 }
 // let name=zbs.name
 // let sex=zbs.sex
