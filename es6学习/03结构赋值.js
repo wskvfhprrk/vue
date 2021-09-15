@@ -8,7 +8,7 @@ console.log(F4)
 let [xsy,ln,sxb,zs]=F4
 console.log(xsy)
 console.log(ln)
-//2、对象结构规范
+//2、对象结构规范——对象赋值名称必须要保持名称一致
 const zbs={
     name:'赵本山',
     sex:'男',
@@ -22,4 +22,5 @@ const zbs={
 let{name,sex,jineng}=zbs
 console.log(name)
 console.log(sex)
+//函数直接调用方法即可
 jineng()
