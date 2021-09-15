@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,62 @@
 
 <body>
     <!-- 安装axios -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    axios({
-        url:'http://localhost:8080/users',
-        method:'get'
-    }).then((response)=>{ //成功返回值
-        console.log("返回成功值："+response.data)
-    }).catch((e)=>{ //失败返回值
-        console.log(e)
-    })
-</script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        //此处可以封装，axios建立
+        const req = axios.create({
+            //提取访问路径前缀
+            baseURL: 'http://localhost:8080',
+            timeout: 10000,//超时
+            //添加头部信息
+            Headers: {
+                'token': 'token123456'
+            },
+            data:{
+                pageNumber:0,
+                pagesize:2   
+            }
+        })
+        //请求拦截器
+        // 添加请求拦截器
+        req.interceptors.request.use(function (config) {
+            // 在发送请求之前做些什么
+            config.Headers.myToke='hhhhhhhwwww'
+            //return才放行
+            return config;
+        }, function (error) {
+            // 对请求错误做些什么
+            return Promise.reject(error);
+        });
+
+        // 添加响应拦截器
+        req.interceptors.response.use(function (response) {
+            // 对响应数据做点什么
+            console.log('响应拦截')
+            console.log(response)
+            //return才放行
+            return response;
+        }, function (error) {
+            // 对响应错误做点什么
+            console.log(响应错误拦截)
+            console.log(error)
+            return Promise.reject(error);
+        });
+        req({
+            url: '/users/all',
+            method: 'get'
+        }).then((response) => { //成功返回值
+            console.log("返回成功值：" )
+            console.log(response)
+        }).catch((e) => { //失败返回值
+            console.log(e)
+        })
+        // req.get('/users/all').then((response) => { //成功返回值
+        //     console.log(response)
+        // }).catch((e) => { //失败返回值
+        //     console.log(e)
+        // })
+    </script>
 </body>
+
 </html>
