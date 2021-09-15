@@ -11,6 +11,7 @@ console.log('我爱唱歌')
 //     sex:sex,
 //     sing:sing
 // }
+
 //如果名称一样可以简写
 let person={
     username,
