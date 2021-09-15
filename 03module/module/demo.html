@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 但此页面报跨域错，使用node也报错 -->
+    <!-- 加入type="module" -->
+    <script type="module">
+        //as是定义别名，导入的js名，后可以省略后缀
+        import * as m1 from './m1'
+        // import * as m2 from './m2'
+        console.log(m1)
+        // console.log(m2)√
+    </script>
+</body>
+</html>
