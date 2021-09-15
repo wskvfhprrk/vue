@@ -1,0 +1,4 @@
+官方网站：
+http://axios-js.com/zh-cn/docs/
+定义：易用、简洁且高效的http库
+请求后台需要解决跨域问题：最简单加入注解：@CrossOrigin
