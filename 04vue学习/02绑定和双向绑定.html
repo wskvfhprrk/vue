@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+        <a v-bind:href="uri">{{bd}}</a>
+        <!-- 简写形式，前面之加冒号 -->
+        <a :href="uri">{{bd}}</a>
+        <!-- 单向数据绑定，只用于显示，不能更改data数据 -->
+        <input name="input" :value='msg' />
+        <!-- 双向绑定，数据联动 -->
+        <input name="input" v-model='msg' />
+
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app', //el是css3中的选择器语法，指定element元素a
+            data: {
+                msg: '中国人',
+                bd: '百度官网',
+                uri: 'http://www.baidu.com'
+            }
+        })
+    </script>
+</body>
+
+</html>
