@@ -4,3 +4,4 @@
 4、下载依赖：npm install XX，或加入版本号npm install XX@版本号
 5、加入测试依赖，打包生产是不用，一般前端需要：npm install -D mockjs或 npm install --save-dev mockjs
 6、删除依赖：npm uninstall XX
+7、下载依赖包：npm install 或npm i
